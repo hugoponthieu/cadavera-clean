@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  labels:
+    name: ingress
+spec:
+  rules:
+  - host: escalope.fr
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/verb"
+        backend:
+          service:
+            name: verb-service
+            port: 
+              number: 3000
+      - pathType: Prefix
+        path: "/adjective"
+        backend:
+          service:
+            name: adj-service
+            port: 
+              number: 3000
+      - pathType: Prefix
+        path: "/subject"
+        backend:
+          service:
+            name: subject-service
+            port: 
+              number: 3000
+      - pathType: Prefix
+        path: "/cadavre"
+        backend:
+          service:
+            name: dispatcher-service
+            port: 
+              number: 7575

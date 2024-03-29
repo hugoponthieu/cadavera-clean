@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: verb-service
+spec:
+  selector:
+    app: providers-verb
+  ports:
+  - port: 3000
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: adj-service
+spec:
+  selector:
+    app: providers-adj
+  ports:
+  - port: 3000
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: subject-service
+spec:
+  selector:
+    app: providers-subject
+  ports:
+  - port: 3000
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dispatcher-service
+spec:
+  selector:
+    app: dispatcher
+  ports:
+  - port: 7575
+    targetPort: 8080

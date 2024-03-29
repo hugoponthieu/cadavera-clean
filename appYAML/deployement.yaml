@@ -1,0 +1,69 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: providers-subject-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: providers-subject
+  template:
+    metadata:
+      labels:
+        app: providers-subject
+    spec:
+      containers:
+      - name: providers-subject
+        image: fteychene/cloud-cadavre-exquis-provider-bis:1.0-SNAPSHOT
+        ports:
+        - containerPort: 8080
+        env:
+        - name: WORD_TYPE
+          value: "SUBJECT"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: providers-verb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: providers-verb
+  template:
+    metadata:
+      labels:
+        app: providers-verb
+    spec:
+      containers:
+      - name: providers-verb
+        image: fteychene/cloud-cadavre-exquis-provider-bis:1.0-SNAPSHOT
+        ports:
+        - containerPort: 8080
+        env:
+        - name: WORD_TYPE
+          value: "VERB"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: providers-adj-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: providers-adj
+  template:
+    metadata:
+      labels:
+        app: providers-adj
+    spec:
+      containers:
+      - name: providers-adj
+        image: fteychene/cloud-cadavre-exquis-provider-bis:1.0-SNAPSHOT
+        ports:
+        - containerPort: 8080
+        env:
+        - name: WORD_TYPE
+          value: "ADJECTIVE"

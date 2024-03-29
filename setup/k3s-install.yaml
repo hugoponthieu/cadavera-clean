@@ -1,0 +1,19 @@
+---
+- name: Setup kube
+  hosts: "{{ node | default('all') }}"
+  tasks:
+    - name: Download k3s installation script
+      ansible.builtin.get_url:
+        url: https://get.k3s.io
+        dest: /home/{{ ansible_user }}/k3s-install.sh
+        mode: "0777"
+    - name: Run k3s installation script
+      ansible.builtin.command: /home/{{ ansible_user }}/k3s-install.sh
+    - name: Wait until the file /etc/rancher/k3s is present before continuing
+      ansible.builtin.wait_for:
+        path: /etc/rancher/k3s/k3s.yaml
+    - name: Copy kubeconfig from server to host
+      ansible.builtin.fetch:
+        src: /etc/rancher/k3s/k3s.yaml
+        dest: ./
+      become: true
