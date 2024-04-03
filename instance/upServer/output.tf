@@ -49,5 +49,5 @@ EOF
 
 resource "local_file" "ansible_inventory" {
   content  = data.template_file.ansible_inventory.rendered
-  filename = "./inventory.yaml"
+  filename = "../inventory.yaml"
 }
