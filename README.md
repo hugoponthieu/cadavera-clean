@@ -91,7 +91,7 @@ cd ../setup
 
 Launch the Ansible playbook with:
 ```bash
-ansible-playbook -i inventory k3s-install.yaml
+ansible-playbook -i inventory kubeconfig-provider.yaml
 ```
 
 You can now run to finish the setup:
