@@ -5,14 +5,14 @@ This documentation has been written to be followed with eyes closed (almost). Tr
 ### Requirements
 
 To follow the installation you must have: 
-	- Openstack accesses:
+- Openstack accesses:
 		1) [Configure OVH user](https://help.ovhcloud.com/csm/fr-public-cloud-compute-horizon?id=kb_article_view&sysparm_article=KB0050895)
 		2) [Install openstack-client](https://help.ovhcloud.com/csm/fr-public-cloud-compute-prepare-openstack-api-environment?id=kb_article_view&sysparm_article=KB0050995)
 		3) [Provide env variable](https://help.ovhcloud.com/csm/fr-public-cloud-compute-set-openstack-environment-variables?id=kb_article_view&sysparm_article=KB0050935) 
-	- [Terraform](https://developer.hashicorp.com/terraform/install)
-	- [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
-	- [Kubectl](https://kubernetes.io/docs/tasks/tools/)
-	- Having an ssh key ready to be used
+- [Terraform](https://developer.hashicorp.com/terraform/install)
+- [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/)
+- Having an ssh key ready to be used
 
 First of all clone the project:
 ```bash
