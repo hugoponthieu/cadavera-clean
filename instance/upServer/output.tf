@@ -1,3 +1,12 @@
+resource "local_file" "inventory_kubeconfig_provider" {
+  content  = "[mesmachines]\n controlPlane ansible_user=debian ansible_host=${openstack_compute_instance_v2.test_terraform_instance[var.instances[0]].access_ip_v4}"
+  filename = "../setup/inventory"
+}
+resource "local_file" "url_server_k3s" {
+  content  = "https://${openstack_compute_instance_v2.test_terraform_instance[var.instances[0]].access_ip_v4}:6443"
+  filename = "../setup/k3s_url"
+}
+
 data "template_file" "ansible_inventory" {
   template = <<EOF
 ---
@@ -45,5 +54,5 @@ EOF
 
 resource "local_file" "ansible_inventory" {
   content  = data.template_file.ansible_inventory.rendered
-  filename = "../k3s-ansible/inventory.yaml"
+  filename = "../k3s-ansible/inventory"
 }
