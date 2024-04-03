@@ -2,6 +2,6 @@ old/
 .terraform*
 creds
 terraform*
-inventory
+inventory*
 k3s.yaml
 k3s_url

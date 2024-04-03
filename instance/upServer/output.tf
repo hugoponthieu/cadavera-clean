@@ -1,7 +1,3 @@
-output "instance_ips" {
-  value = [for instance in openstack_compute_instance_v2.test_terraform_instance : instance.access_ip_v4]
-}
-
 data "template_file" "ansible_inventory" {
   template = <<EOF
 ---
@@ -49,5 +45,5 @@ EOF
 
 resource "local_file" "ansible_inventory" {
   content  = data.template_file.ansible_inventory.rendered
-  filename = "../inventory.yaml"
+  filename = "../k3s-ansible/inventory.yaml"
 }
