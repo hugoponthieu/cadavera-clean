@@ -5,5 +5,5 @@ module "upServer" {
   application_key    = "Generate app key"
   application_secret = "Generate app secret"
   consumer_key       = "Generate consumer key"
-  instance_name      = var.instances
+  instances          = var.instances
 }
