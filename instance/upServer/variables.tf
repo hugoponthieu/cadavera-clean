@@ -13,6 +13,6 @@ variable "application_secret" {
 variable "consumer_key" {
   type = string
 }
-variable "instance_name" {
-  type = string
+variable "instances" {
+  type = list(string)
 }
