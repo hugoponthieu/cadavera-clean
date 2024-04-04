@@ -128,6 +128,18 @@ You can now run to finish the setup:
 
 You are now entering the last part of the documentation. You should be able to use the cadavre exquis very soon (almost).
 
+Get the IP address of the server in the ../appYAML/k3s.yaml and add the reference to your /etc/hosts
+
+```bash
+sudo nano /etc/hosts
+```
+
+Following your other rules past the server IP address and the domain you want to give the app
+
+```bash
+<IP_ADDRESS> escalope.fr
+```
+
 ## Deploy the app
 
 ```bash
