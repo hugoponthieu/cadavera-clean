@@ -17,7 +17,7 @@ To follow the installation you must have:
 - [Terraform](https://developer.hashicorp.com/terraform/install)
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/)
-- Having an ssh key ready to be used
+- Having an ssh key ed25519 ready to be used
 
 First of all clone the project:
 
@@ -83,6 +83,8 @@ If everything went as planned you should have this at the end of the execution:
 Apply complete! Resources: 7 added, 0 changed, 0 destroyed.
 ```
 
+You just created multiple virtual machines ready to accept your Kubernetes cluster.
+
 ## Create Kubernetes cluster
 
 You can now enter:
@@ -97,11 +99,14 @@ Then run:
 ansible-playbook playbook/site.yml -i inventory
 ```
 
-After a lot of logs (too much) your cluster should be setup and functional. Let's now provide an access to this cluster
+After a lot of logs (too much) your cluster should be setup and functional.
+Your cluster is made of 3 differents machines, one mastering the two others. They are replicated to ensure no data is lost in case of failure.
+
+Let's now provide an access to this cluster.
 
 ## Setup the access
 
-Now let's configure the freshly created instance. So you can run:
+It's time to configure the freshly created instance. You can run:
 
 ```bash
 cd ../setup
@@ -132,3 +137,7 @@ Everything is now setup to access the Kubernetes cluster you've juste build. You
 ```bash
 kubectl apply --kubeconfig=k3s.yaml -f . 
 ```
+
+## Acces the app
+
+In your favorite browser enter _escalope.fr_ and watch the magic unfold as the app is up and running. you can click the button to create a new sentence as you wish.
