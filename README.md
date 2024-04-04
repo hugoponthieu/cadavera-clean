@@ -1,6 +1,6 @@
 # Cadavera
 
-This documentation has been written to be followed with eyes closed (almost). Try to not move any file in order to not corrupt the installation. This documentation should work for almost all linux distros. All actions in this documentation do NOT require to be logged as root.
+This documentation has been written to be followed with eyes closed (almost). Try to not move any file in order to not corrupt the installation. This documentation should work for almost all linux distros. The setup requires to have root privileges.
 
 This application has been created by Hugo PONTHIEU, Sarah THEOULLE and Thomas BROINE
 
@@ -127,18 +127,6 @@ You can now run to finish the setup:
 ```
 
 You are now entering the last part of the documentation. You should be able to use the cadavre exquis very soon (almost).
-
-Get the IP address of the server in the ../appYAML/k3s.yaml and add the reference to your /etc/hosts
-
-```bash
-sudo nano /etc/hosts
-```
-
-Following your other rules past the server IP address and the domain you want to give the app
-
-```bash
-<IP_ADDRESS> escalope.fr
-```
 
 ## Deploy the app
 
