@@ -67,7 +67,7 @@ terraform apply
 
 If everything went as planned you should have this at the end of the execution:
 ```
-Apply complete! Resources: 6 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 7 added, 0 changed, 0 destroyed.
 ```
 
 ## Create Kubernetes cluster
