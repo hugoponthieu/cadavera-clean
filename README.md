@@ -143,3 +143,16 @@ kubectl apply --kubeconfig=k3s.yaml -f .
 ## Acces the app
 
 In your favorite browser enter _escalope.fr_ and watch the magic unfold as the app is up and running. you can click the button to create a new sentence as you wish.
+
+
+## What have you done ?? 
+
+In the first section you deployed with Terraform 3 OVH instances. Then with Ansible you setup a Kubernetes cluster with one server (control plane) node and two agent nodes (node 1, node 2) .This simple graph sum it simply:
+
+![](./assets/cluster.png)
+
+We choose to use the provided Ansible provided by k3s  to setup the cluster. We could have chosen to deploy more server nodes for higher availability but the goal here was really for us to explore multi-cluster.
+
+Once that was done you applied with Kubectl a classic cluster infrastructure that look like this:
+
+![](./assets/depl.png)
