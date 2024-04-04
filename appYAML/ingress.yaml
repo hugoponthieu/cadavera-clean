@@ -24,7 +24,7 @@ spec:
             port: 
               number: 3000
       - pathType: Prefix
-        path: "/subject"
+        path: "/subject "
         backend:
           service:
             name: subject-service
