@@ -22,17 +22,17 @@ To follow the installation you must have:
 First of all clone the project:
 
 ```bash
-git clone https://github.com/hugoponthieu/cadavera.git
+git clone git@github.com:hugoponthieu/cadavera-clean.git
 ```
 
 Enter the project:
 
 ```bash
-cd cadavera
+cd cadavera-clean
 ```
 
 If you fill requirements you should have download the `openrc.sh`
-Source the file openrc.sh file:
+Source the file openrc.sh file in the terminal:
 
 ```bash
 source path/to/openrc.sh
@@ -64,6 +64,8 @@ module "upServer" {
   instances          = var.instances
 }
 ```
+
+You can change the name of the instances you will be creating. The list of names is in the file variable.tf
 
 As you are in the file  `` instance/ ``  you can now run:
 
