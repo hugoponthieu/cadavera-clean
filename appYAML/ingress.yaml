@@ -31,7 +31,7 @@ spec:
             port: 
               number: 3000
       - pathType: Prefix
-        path: "/cadavre"
+        path: "/"
         backend:
           service:
             name: dispatcher-service
